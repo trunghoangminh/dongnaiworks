@@ -1,8 +1,12 @@
 package com.trunghoang.dongnaiworks;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
+
+import com.trunghoang.config.ApplicationConfiguration;
 
 /**
  * 
@@ -10,13 +14,19 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @SpringBootApplication
-@ComponentScan(value = "com.trunghoang")
+@Import({ApplicationConfiguration.class})
 public class DongnaiworksApplication {
+
+	private static Logger log = LoggerFactory
+			.getLogger(DongnaiworksApplication.class);
+
 	/**
 	 * 
 	 * Start web
 	 */
 	public static void main(String[] args) {
+		log.info("<!-- Start application --!>");
 		SpringApplication.run(DongnaiworksApplication.class, args);
+		log.info("<!-- Execute application sucessful --!>");
 	}
 }
