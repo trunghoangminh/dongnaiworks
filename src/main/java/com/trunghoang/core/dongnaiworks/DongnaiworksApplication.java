@@ -1,4 +1,4 @@
-package com.trunghoang.dongnaiworks;
+package com.trunghoang.core.dongnaiworks;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
-import com.trunghoang.config.ApplicationConfiguration;
+import com.trunghoang.core.config.ApplicationConfiguration;
 
 /**
  * 
@@ -14,7 +14,7 @@ import com.trunghoang.config.ApplicationConfiguration;
  *
  */
 @SpringBootApplication
-@Import({ApplicationConfiguration.class})
+@Import({ ApplicationConfiguration.class })
 public class DongnaiworksApplication {
 
 	private static Logger log = LoggerFactory

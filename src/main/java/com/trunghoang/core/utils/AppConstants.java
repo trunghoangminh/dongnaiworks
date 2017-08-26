@@ -1,4 +1,4 @@
-package com.trunghoang.utils;
+package com.trunghoang.core.utils;
 /**
  * 
  * This class provide DongNaiWorks constants

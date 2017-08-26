@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+
+	<!--Configure properties here. Use for set-up log properties -->
+	<Properties>
+		<Property name="log-path">C:/Users/Trung/Tracking/logs</Property>
+		<Property name="archive">${log-path}/archive</Property>
+	</Properties>
+
+	<!--Configure appenders here -->
+	<Appenders>
+		<!-- Console log. Show all activity log in terminal -->
+		<Console name="ConsoleLog" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>
+					[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+		</Console>
+		<!-- Config log server -->
+		<RollingFile name="SeverLog" fileName="${log-path}/sever.log"
+			filePattern="${archive}/sever.log.%d{yyyy-MM-dd-hh-mm}">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+
+		<!-- Config log all activity -->
+		<RollingFile name="AllActivityLog" fileName="${log-path}/all_activity.log"
+			filePattern="${archive}/all_activity.log.%d{yyyy-MM-dd-hh-mm}">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+
+		<!-- Config log database -->
+		<RollingFile name="DbLog" fileName="${log-path}/db.log"
+			filePattern="${archive}/db.log.%d{yyyy-MM-dd-hh-mm}">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+	</Appenders>
+
+	<!--Configure loggers here -->
+	<Loggers>
+		<!-- Server log -->
+		<Logger name="org.springframework.web" level="debug" additivity="false">
+			<AppenderRef ref="SeverLog" />
+			<AppenderRef ref="ConsoleLog" />
+		</Logger>
+
+		<Logger name="com.trunghoang.core" level="info" additivity="false">
+			<AppenderRef ref="AllActivityLog" />
+		</Logger>
+
+		<!-- Db log -->
+		<Logger name="com.trunghoang.business" level="info" additivity="false" >
+			<AppenderRef ref="DbLog" />
+		</Logger>
+		<Root additivity="false">
+			<AppenderRef ref="ConsoleLog" />
+		</Root>
+	</Loggers>
+</Configuration>
