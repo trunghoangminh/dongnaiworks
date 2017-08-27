@@ -42,6 +42,17 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
+		<!-- Database -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
 		<!-- Scope test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,12 +60,6 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- Logger test -->
-		<dependency>
-			<groupId>uk.org.lidalia</groupId>
-			<artifactId>slf4j-test</artifactId>
-			<version>1.2.0</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
