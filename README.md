@@ -7,8 +7,8 @@ Open terminal enter command below: <br />
 ```chmod +x startTomcat.sh``` <br />
 Use `./startTomcat.sh` to run application.
 ## 3. Access application
-- Application run in port: **8888** 
-`[IP]:8888` or `localhost:8888`
+- Application run in port: **8888** <br />
+`[IP]:8888` or `localhost:8888` <br />
 - Application debug port: **8889**
 ## 4. Logger using **SLF4J**
 All log application in **C:/User/[username]/Tracking/logs/**
