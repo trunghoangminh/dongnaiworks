@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Import;
 
 import com.trunghoang.core.configurations.ApplicationConfiguration;
@@ -15,10 +17,16 @@ import com.trunghoang.core.configurations.ApplicationConfiguration;
  */
 @SpringBootApplication
 @Import({ ApplicationConfiguration.class })
-public class DongnaiworksApplication {
+public class DongnaiworksApplication extends SpringBootServletInitializer {
 
 	private static Logger log = LoggerFactory
 			.getLogger(DongnaiworksApplication.class);
+
+	@Override
+	protected SpringApplicationBuilder configure(
+			SpringApplicationBuilder application) {
+		return application.sources(DongnaiworksApplication.class);
+	}
 
 	/**
 	 * 
