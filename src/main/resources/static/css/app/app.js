@@ -1,1 +1,0 @@
-/** This my JavaScript of application*/
