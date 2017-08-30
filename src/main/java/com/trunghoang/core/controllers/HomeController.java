@@ -38,4 +38,15 @@ public class HomeController {
 		logger.info("Index page");
 		return "index";
 	}
+
+	/**
+	 * Forward "/index" URL to "/"
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String forwardIndexPage(Model model) {
+		return "forward:/";
+	}
 }
