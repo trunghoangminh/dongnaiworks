@@ -4,7 +4,7 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">dongnai<b>works</b></a>
+			<a class="navbar-brand" href="/">dongnai<b>works</b></a>
 		</div>
 		<ul class="nav navbar-nav">
 			<c:forEach var="navigator" items="${navigators}">

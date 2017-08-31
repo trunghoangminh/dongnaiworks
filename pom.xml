@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>dongnaiworks</name>
-	<description>Demo project for Spring Boot</description>
+	<description>DongNaiWork help other people looking for the job</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
