@@ -18,8 +18,8 @@
 			</PatternLayout>
 		</Console>
 		<!-- Config log server -->
-		<RollingFile name="SeverLog" fileName="${log-path}/sever.log"
-			filePattern="${archive}/sever.log.%d{yyyy-MM-dd-hh-mm}">
+		<RollingFile name="ServerLog" fileName="${log-path}/server.log"
+			filePattern="${archive}/server.log.%d{yyyy-MM-dd-hh-mm}">
 			<PatternLayout
 				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
 				charset="UTF-8" />
@@ -59,11 +59,15 @@
 		<!-- Server log -->
 		<Logger name="org.springframework.web" level="debug"
 			additivity="false">
-			<AppenderRef ref="SeverLog" />
+			<AppenderRef ref="ServerLog" />
 			<AppenderRef ref="ConsoleLog" />
 		</Logger>
 
 		<Logger name="com.trunghoang.core" level="info" additivity="false">
+			<AppenderRef ref="AllActivityLog" />
+		</Logger>
+		
+		<Logger name="com.trunghoang.core" level="error" additivity="false">
 			<AppenderRef ref="AllActivityLog" />
 		</Logger>
 

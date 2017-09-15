@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Import;
 		"com.trunghoang.business.repositories.impl",
 		"com.trunghoang.business.services",
 		"com.trunghoang.business.services.impl",
-		"com.trunghoang.core.controllers" })
+		"com.trunghoang.core.controllers", "com.trunghoang.core.context" })
 @Import({ DatabaseConfiguration.class, EntityConfiguration.class })
 public class ApplicationConfiguration {
 	private static Logger logger = LoggerFactory

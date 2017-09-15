@@ -13,7 +13,7 @@ import com.trunghoang.business.services.TestService;
 
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class HomeController extends BaseController {
 
 	private Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -34,8 +34,9 @@ public class HomeController {
 
 		// Put list navigator
 		model.addAttribute("navigators", navigatorService.getAll());
-		logger.info(navigatorService.getAll().toString());
-		logger.info("Index page");
+		if (logger.isInfoEnabled()) {
+			logger.info("Index page");
+		}
 		return "index";
 	}
 

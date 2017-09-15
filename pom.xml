@@ -81,6 +81,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Properties configuration -->
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>${propertiesConfigurationVersion}</version>
+		</dependency>
+
 		<!-- Use for Development -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -121,6 +128,9 @@
 
 		<!-- JSTL version -->
 		<jstlVersion>1.2</jstlVersion>
+		
+		<!-- Properties configuration version -->
+		<propertiesConfigurationVersion>1.6</propertiesConfigurationVersion>
 	</properties>
 
 </project>
