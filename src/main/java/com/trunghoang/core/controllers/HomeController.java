@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.trunghoang.business.services.NavigatorService;
 import com.trunghoang.business.services.TestService;
+import com.trunghoang.core.utils.AppPage;
+import com.trunghoang.core.utils.AppRouter;
 
 @Controller
-@RequestMapping("/")
 public class HomeController extends BaseController {
 
 	private Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -29,7 +30,7 @@ public class HomeController extends BaseController {
 	 * @param model
 	 * @return index page
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = AppRouter.ROUTE_URL_SLASH, method = RequestMethod.GET)
 	public String getIndexPage(Model model) {
 
 		// Put list navigator
@@ -37,7 +38,7 @@ public class HomeController extends BaseController {
 		if (logger.isInfoEnabled()) {
 			logger.info("Index page");
 		}
-		return "index";
+		return AppPage.PAGE_INDEX;
 	}
 
 	/**
@@ -46,7 +47,7 @@ public class HomeController extends BaseController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = AppRouter.ROUTE_URL_LOGIN, method = RequestMethod.GET)
 	public String forwardIndexPage(Model model) {
 		return "forward:/";
 	}
