@@ -14,7 +14,7 @@
 <body>
 	<div class="jumbotron text-center">
 	<h1>404 NOT FOUND, TRANG BẠN TRUY CẬP KHÔNG TÌM THẤY</h1>
-	<p>Vui lòng quay về trang chủ! <a href="/">Về trang chủ</a></p>
+	<p>Vui lòng quay về trang chủ! <a href="${slash}">Về trang chủ</a></p>
 </div>
 </body>
 </html>
