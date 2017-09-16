@@ -12,6 +12,13 @@
 <title>Lỗi 404 | Việc làm Đồng Nai</title>
 </head>
 <body>
+
+	<!-- Include header -->
+	<%@include file="home-page/header.jsp"%>
+	
+	<!-- Include navigator -->
+	<%@include file="home-page/navigator.jsp"%>
+	
 	<div class="jumbotron text-center">
 	<h1>404 NOT FOUND, TRANG BẠN TRUY CẬP KHÔNG TÌM THẤY</h1>
 	<p>Vui lòng quay về trang chủ! <a href="${slash}">Về trang chủ</a></p>

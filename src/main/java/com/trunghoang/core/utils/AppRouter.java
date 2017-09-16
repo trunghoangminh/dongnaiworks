@@ -12,8 +12,9 @@ public class AppRouter {
 
 	// Login page
 	public static final String ROUTE_URL_LOGIN = "/login";
+	public static final String ROUTE_URL_REGISTER = "/register";
 
 	// Others page
-	public static final String ROUTE_URL_OTHERS = "/*";
+	public static final String ROUTE_URL_OTHERS = "/**";
 
 }

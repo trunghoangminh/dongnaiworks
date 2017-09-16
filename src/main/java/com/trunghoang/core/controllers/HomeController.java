@@ -14,6 +14,7 @@ import com.trunghoang.core.utils.AppPage;
 import com.trunghoang.core.utils.AppRouter;
 
 @Controller
+@RequestMapping("/")
 public class HomeController extends BaseController {
 
 	private Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -35,6 +36,10 @@ public class HomeController extends BaseController {
 
 		// Put list navigator
 		model.addAttribute("navigators", navigatorService.getAll());
+		model.addAttribute("slash", AppRouter.ROUTE_URL_SLASH);
+		model.addAttribute("index", AppRouter.ROUTE_URL_INDEX);
+		model.addAttribute("login", AppRouter.ROUTE_URL_LOGIN);
+		model.addAttribute("register", AppRouter.ROUTE_URL_REGISTER);
 		if (logger.isInfoEnabled()) {
 			logger.info("Index page");
 		}
@@ -47,7 +52,7 @@ public class HomeController extends BaseController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = AppRouter.ROUTE_URL_LOGIN, method = RequestMethod.GET)
+	@RequestMapping(value = AppRouter.ROUTE_URL_INDEX, method = RequestMethod.GET)
 	public String forwardIndexPage(Model model) {
 		return "forward:/";
 	}

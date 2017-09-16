@@ -8,6 +8,6 @@ package com.trunghoang.core.utils;
 public class AppPage {
 
 	public static final String PAGE_INDEX = "index";
-	public static final String PAGE_LOGIN = "login";
+	public static final String PAGE_LOGIN = "login-page/login";
 	public static final String PAGE_NOT_FOUND = "404";
 }
