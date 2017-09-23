@@ -2,6 +2,8 @@ package com.trunghoang.core.context;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.trunghoang.core.utils.AppConstants;
@@ -16,16 +18,10 @@ public class DongnaiworksContext {
 
 	private Logger logger = LoggerFactory.getLogger(DongnaiworksContext.class);
 
+	@Autowired
+	private ApplicationContext applicationContext;
+
 	private ApplicationProperties applicationProperties;
-
-	public ApplicationProperties getApplicationProperties() {
-		return applicationProperties;
-	}
-
-	public void setApplicationProperties(
-			ApplicationProperties applicationProperties) {
-		this.applicationProperties = applicationProperties;
-	}
 
 	public DongnaiworksContext(ApplicationProperties applicationProperties) {
 		init();
@@ -49,6 +45,14 @@ public class DongnaiworksContext {
 		applicationProperties = new ApplicationProperties();
 		applicationProperties
 				.init(AppConstants.CONFIG_APPLICATION_PROPERTIES_FILENAME);
+	}
+
+	public ApplicationProperties getApplicationProperties() {
+		return applicationProperties;
+	}
+
+	public ApplicationContext getApplicationContext() {
+		return applicationContext;
 	}
 
 }
