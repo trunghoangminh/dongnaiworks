@@ -14,26 +14,26 @@ import javax.validation.constraints.NotNull;
  *
  */
 @Entity
-@Table(name = "Navigator")
+@Table(name = "navigator")
 public class Navigator {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "Id")
-	private int id;
+	@Column(name = "id")
+	private Integer id;
 
-	@Column(name = "Name")
+	@Column(name = "name")
 	@NotNull
 	private String name;
 
-	@Column(name = "Value")
+	@Column(name = "value")
 	@NotNull
 	private String value;
 
-	@Column(name = "Description")
+	@Column(name = "description")
 	private String description;
 
-	@Column(name = "Link")
+	@Column(name = "link")
 	@NotNull
 	private String link;
 
@@ -41,11 +41,11 @@ public class Navigator {
 
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
