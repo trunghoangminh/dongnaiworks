@@ -22,6 +22,9 @@ public class NotFoundController extends BaseController {
 	 */
 	@RequestMapping(value = AppRouter.ROUTE_URL_OTHERS, method = RequestMethod.GET)
 	public String handleNotFoundPage(Model model) {
+
+		model.addAttribute("resourceStatic",
+				AppPage.PAGE_URL_RESOURCE_NOT_FOUND_STATIC);
 		model.addAttribute("slash", AppRouter.ROUTE_URL_SLASH);
 		if (logger.isInfoEnabled()) {
 			logger.info("Page not found!");

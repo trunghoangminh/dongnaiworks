@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.trunghoang.business.services.AccountService;
 import com.trunghoang.business.services.NavigatorService;
-import com.trunghoang.business.services.TestService;
 import com.trunghoang.core.utils.AppPage;
 import com.trunghoang.core.utils.AppRouter;
 
@@ -20,7 +20,7 @@ public class HomeController extends BaseController {
 	private Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Autowired
-	private TestService testService;
+	private AccountService accountService;
 
 	@Autowired
 	private NavigatorService navigatorService;
@@ -36,12 +36,20 @@ public class HomeController extends BaseController {
 
 		// Put list navigator
 		model.addAttribute("navigators", navigatorService.getAll());
+
+		// Some constant for index.jsp
+		model.addAttribute("resourcePage", AppPage.PAGE_URL_RESOURCE_INDEX);
+		model.addAttribute("resourceStatic",
+				AppPage.PAGE_URL_RESOURCE_INDEX_STATIC);
 		model.addAttribute("slash", AppRouter.ROUTE_URL_SLASH);
 		model.addAttribute("index", AppRouter.ROUTE_URL_INDEX);
 		model.addAttribute("login", AppRouter.ROUTE_URL_LOGIN);
 		model.addAttribute("register", AppRouter.ROUTE_URL_REGISTER);
+
+		accountService.getAll();
 		if (logger.isInfoEnabled()) {
 			logger.info("Index page");
+			logger.info(accountService.getAll().toString());
 		}
 		return AppPage.PAGE_INDEX;
 	}

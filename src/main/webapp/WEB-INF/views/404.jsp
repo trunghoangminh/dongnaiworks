@@ -6,18 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap css -->
-<link rel="stylesheet" href="/css/lib/bootstrap-3.3.7.css">
+<link rel="stylesheet" href="${resourceStatic}/css/lib/bootstrap-3.3.7.css">
 <!-- My application css -->
-<link rel="stylesheet" href="/css/app/app.css">
+<link rel="stylesheet" href="${resourceStatic}/css/app/app.css">
+
 <title>Lỗi 404 | Việc làm Đồng Nai</title>
 </head>
 <body>
-
-	<!-- Include header -->
-	<%@include file="home-page/header.jsp"%>
-	
-	<!-- Include navigator -->
-	<%@include file="home-page/navigator.jsp"%>
 	
 	<div class="jumbotron text-center">
 	<h1>404 NOT FOUND, TRANG BẠN TRUY CẬP KHÔNG TÌM THẤY</h1>
