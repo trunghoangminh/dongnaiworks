@@ -3,7 +3,7 @@
 
 	<!--Configure properties here. Use for set-up log properties -->
 	<Properties>
-		<Property name="log-path">C:/Users/Trung/Tracking/logs</Property>
+		<Property name="log-path">/home/hmtrung/dongnaiworks/logs</Property>
 		<Property name="archive">${log-path}/archive</Property>
 	</Properties>
 
@@ -64,10 +64,6 @@
 		</Logger>
 
 		<Logger name="com.trunghoang.core" level="info" additivity="false">
-			<AppenderRef ref="AllActivityLog" />
-		</Logger>
-		
-		<Logger name="com.trunghoang.core" level="error" additivity="false">
 			<AppenderRef ref="AllActivityLog" />
 		</Logger>
 

@@ -1,5 +1,7 @@
 package com.trunghoang.core.dongnaiworks;
 
+import java.io.File;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,7 @@ public class DongnaiworksApplication extends SpringBootServletInitializer
 	 */
 	@Override
 	public void run(String... args) throws Exception {
+		checkAndCreateLogFolder();
 		DongnaiworksContext dnwContext = appContext
 				.getBean(DongnaiworksContext.class);
 		dnwContext.init();
@@ -49,6 +52,25 @@ public class DongnaiworksApplication extends SpringBootServletInitializer
 			logger.info("Dong Nai Works context init sucessful");
 		}
 
+	}
+
+	public void checkAndCreateLogFolder() {
+		StringBuilder path = new StringBuilder();
+
+		path.append(File.separator);
+		path.append("/home");
+		path.append(File.separator);
+		path.append(System.getProperty("user.name"));
+		path.append(File.separator);
+		path.append("dongnaiworks");
+		path.append(File.separator);
+		path.append("logs");
+		path.append(File.separator);
+		
+		File logs = new File(path.toString());
+		if (!logs.exists()) {
+			logs.mkdirs();
+		}
 	}
 
 	/**
